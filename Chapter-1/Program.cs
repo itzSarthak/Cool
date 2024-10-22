@@ -84,8 +84,6 @@ namespace Myspace
             if(string.IsNullOrEmpty(teamE))
                 Console.WriteLine("An Invalid Team");
             
-            return 0;
-            
             
             int age;
             string? name;
