@@ -60,6 +60,25 @@ namespace PolymorphismDemo
         }
     }
 
+        // Method Overhiding 
+        /*
+            When a derived class defines a method with the same name as a method in the base class
+            but does not intend to override it, you can use new to hide the base class's version.
+            This is distinct from overriding because it essentially creates a new method in the derived class's scope,
+            hiding the base class's method rather than modifying its behavior.
+            
+            Hiding vs. Overriding:
+                 Hiding does not replace the base method's behavior when accessed through a base class reference.
+        */
+    public class Mangers : Employee
+    {
+        // Hides BaseClass Display method
+        public new void DisplayRole()
+        {
+            Console.WriteLine("Role: Mangers.");
+        }
+    }
+
     // Main Program demonstrating polymorphism
     public class Program
     {
@@ -76,6 +95,10 @@ namespace PolymorphismDemo
 
             fullTimeEmp.DisplayRole();           // Calls overridden method in FullTimeEmployee
             partTimeEmp.DisplayRole();           // Calls overridden method in PartTimeEmployee
+
+
+            Mangers mangers = new Mangers();    // Method Hiding
+            mangers.DisplayRole();
         }
     }
 }
